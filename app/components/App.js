@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {
   View,
-  Text,
   StyleSheet
 } from 'react-native';
+
+import Pad from './Pad';
 
 const PAD_NUMBER = 4;
 class App extends Component {
@@ -17,10 +18,7 @@ class App extends Component {
       for (let i = 0; i < PAD_NUMBER; i += 1) {
         const padNumber = j * PAD_NUMBER + i;
         pads.push(
-          <View
-            key={`Pad${i}${j}`}
-            style={styles.pad}
-          />
+          <Pad key={`Pad${i}${j}`} />
         );
       }
 
@@ -58,12 +56,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     padding: 10
-  },
-  pad: {
-    backgroundColor: 'gray',
-    flex: 1,
-    borderRadius: 5,
-    margin: 5
   }
 });
 
