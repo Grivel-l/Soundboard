@@ -77,7 +77,6 @@ class Sound extends Component {
   }
 
   playMusic() {
-    console.log('Play music', this.musicPlaying);
     if (this.musics[this.musicPlaying].isLoaded()) {
       this.musics[this.musicPlaying].play(() => {
         this.props.musicEnd();

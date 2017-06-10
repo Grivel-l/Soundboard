@@ -3,7 +3,6 @@ import {
   View,
   StyleSheet,
   Image,
-  TouchableWithoutFeedback,
   TouchableHighlight
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
