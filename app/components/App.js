@@ -3,6 +3,7 @@ import {
   View,
   StyleSheet,
   Image,
+  TouchableWithoutFeedback,
   TouchableHighlight
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -15,18 +16,59 @@ class App extends Component {
 
     this.state = {
       playMusic: false,
-      sound: null
+      sound: null,
+      stop: false,
+      nextMusic: false,
+      previousMusic: false
     };
 
+    this.playMusic = this.playMusic.bind(this);
+    this.nextMusic = this.nextMusic.bind(this);
+    this.previousMusic = this.previousMusic.bind(this);
+
+    this.stopEnd = this.stopEnd.bind(this);
+    this.nextMusicEnd = this.nextMusicEnd.bind(this);
     this.soundEnd = this.soundEnd.bind(this);
+    this.musicEnd = this.musicEnd.bind(this);
+    this.previousMusicEnd = this.previousMusicEnd.bind(this);
   }
 
   playSound(sound) {
     this.setState({sound});
   }
 
+  playMusic() {
+    if (!this.state.playMusic) {
+      this.setState({playMusic: true});
+    }
+  }
+
+  nextMusic() {
+    this.setState({nextMusic: true});
+  }
+
+  previousMusic() {
+    this.setState({previousMusic: true});
+  }
+
+  nextMusicEnd() {
+    this.setState({nextMusic: false});
+  }
+
+  previousMusicEnd() {
+    this.setState({previousMusic: false});
+  }
+
   soundEnd() {
     this.setState({sound: null});
+  }
+
+  musicEnd() {
+    this.setState({playMusic: false});
+  }
+
+  stopEnd() {
+    this.setState({stop: false, playMusic: false, sound: null});
   }
 
   render() {
@@ -35,15 +77,22 @@ class App extends Component {
         <Sound
           sound={this.state.sound}
           playMusic={this.state.playMusic}
+          stop={this.state.stop}
+          nextMusic={this.state.nextMusic}
+          previousMusic={this.state.previousMusic}
+          nextMusicEnd={this.nextMusicEnd}
+          previousMusicEnd={this.previousMusicEnd}
           soundEnd={this.soundEnd}
+          musicEnd={this.musicEnd}
+          stopEnd={this.stopEnd}
         />
         <View style={styles.row}>
           <TouchableHighlight
             onPress={() => {
               this.playSound(0);
             }}
-            underlayColor={'rgba(0, 0, 0, 0.2)'}
             style={styles.imgWrapper}
+            underlayColor={'rgba(0, 0, 0, 0.1)'}
           >
             <Image
               source={require('../img/firstPad.png')}
@@ -55,8 +104,8 @@ class App extends Component {
             onPress={() => {
               this.playSound(1);
             }}
-            underlayColor={'rgba(0, 0, 0, 0.2)'}
             style={styles.imgWrapper}
+            underlayColor={'rgba(0, 0, 0, 0.1)'}
           >
             <Image
               source={require('../img/secondPad.png')}
@@ -65,24 +114,47 @@ class App extends Component {
             />
           </TouchableHighlight>
         </View>
-        <View style={[styles.row, {alignItems: 'stretch'}]}>
+        {/*backgroundColor: 'transparent', if we don't, Touchable events don't work properly (Really weird)*/}
+        <View style={[styles.row, {alignItems: 'stretch', backgroundColor: 'transparent'}]}>
           <View style={[styles.row, {flexDirection: 'row', alignItems: 'stretch'}]}>
             <View style={[styles.row, styles.controls]}>
+              <TouchableHighlight
+                onPress={this.previousMusic}
+                underlayColor={'rgba(0, 0, 0, 0.1)'}
+              >
               <Icon name={'backward'} size={60} color={'white'} />
+              </TouchableHighlight>
             </View>
-            <View style={[styles.row, {flex: 2}]}>
-              <Image
-                source={require('../img/radio.png')}
-                resizeMode={'contain'}
-                style={styles.radio}
-              />
+            <View style={[styles.row, {flex: 2, backgroundColor: 'transparent'}]}>
+              <TouchableHighlight
+                onPress={this.playMusic}
+                underlayColor={'rgba(0, 0, 0, 0.1)'}
+              >
+                <Image
+                  source={require('../img/radio.png')}
+                  resizeMode={'contain'}
+                  style={styles.radio}
+                />
+              </TouchableHighlight>
             </View>
             <View style={[styles.row, styles.controls]}>
-              <Icon name={'forward'} size={60} color={'white'} />
+              <TouchableHighlight
+                onPress={this.nextMusic}
+                underlayColor={'rgba(0, 0, 0, 0.1)'}
+              >
+                <Icon name={'forward'} size={60} color={'white'} />
+              </TouchableHighlight>
             </View>
           </View>
           <View style={styles.row}>
-            <Icon name={'stop'} color={'white'} size={60} />
+            <TouchableHighlight
+              onPress={() => {
+                this.setState({stop: true})
+              }}
+              underlayColor={'rgba(0, 0, 0, 0.1)'}
+            >
+              <Icon name={'stop'} color={'white'} size={60} />
+            </TouchableHighlight>
           </View>
         </View>
       </View>
@@ -119,7 +191,8 @@ const styles = StyleSheet.create({
   },
   controls: {
     justifyContent: 'flex-end',
-    marginBottom: 20
+    marginBottom: 20,
+    backgroundColor: 'transparent'
   }
 });
 
