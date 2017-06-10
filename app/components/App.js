@@ -18,7 +18,10 @@ class App extends Component {
       for (let i = 0; i < PAD_NUMBER; i += 1) {
         const padNumber = j * PAD_NUMBER + i;
         pads.push(
-          <Pad key={`Pad${i}${j}`} />
+          <Pad
+            key={`Pad${i}${j}`}
+            sound={`sound${padNumber + 1}.mp3`}
+          />
         );
       }
 
