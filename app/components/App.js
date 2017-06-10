@@ -1,52 +1,80 @@
 import React, {Component} from 'react';
 import {
   View,
-  StyleSheet
+  StyleSheet,
+  Image,
+  TouchableHighlight
 } from 'react-native';
 
-import Pad from './Pad';
+import Sound from './Sound';
 
-const PAD_NUMBER = 4;
 class App extends Component {
   constructor(props) {
     super(props);
-  }
 
-  renderPads() {
-    const renderOnePad = j => {
-      const pads = [];
-      for (let i = 0; i < PAD_NUMBER; i += 1) {
-        const padNumber = j * PAD_NUMBER + i;
-        pads.push(
-          <Pad
-            key={`Pad${i}${j}`}
-            sound={`sound${padNumber + 1}.mp3`}
-          />
-        );
-      }
-
-      return pads;
+    this.state = {
+      playMusic: false,
+      sound: null
     };
 
-    const pads = [];
-    for (let i = 0;i < PAD_NUMBER; i += 1) {
-      pads.push(
-        <View
-          style={{flex: 1, alignSelf: 'stretch'}}
-          key={`Line${i}`}
-        >
-          {renderOnePad(i)}
-        </View>
-      );
-    }
+    this.soundEnd = this.soundEnd.bind(this);
+  }
 
-    return pads;
+  playSound(sound) {
+    this.setState({sound});
+  }
+
+  soundEnd() {
+    this.setState({sound: null});
   }
 
   render() {
+    console.log('Sound: ', this.state.sound);
     return (
       <View style={styles.container}>
-        {this.renderPads()}
+        <Sound
+          sound={this.state.sound}
+          playMusic={this.state.playMusic}
+          soundEnd={this.soundEnd}
+        />
+        <View style={styles.row}>
+          <TouchableHighlight
+            onPress={() => {
+              this.playSound(0);
+            }}
+            underlayColor={'rgba(0, 0, 0, 0.2)'}
+            style={styles.imgWrapper}
+          >
+            <Image
+              source={require('../img/firstPad.png')}
+              style={styles.pad}
+              resizeMode={'contain'}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => {
+              this.playSound(1);
+            }}
+            underlayColor={'rgba(0, 0, 0, 0.2)'}
+            style={styles.imgWrapper}
+          >
+            <Image
+              source={require('../img/secondPad.png')}
+              style={styles.pad}
+              resizeMode={'contain'}
+            />
+          </TouchableHighlight>
+        </View>
+        <View style={[styles.row, {alignItems: 'stretch'}]}>
+          <View style={[styles.row, {flexDirection: 'row', alignItems: 'stretch'}]}>
+            <View style={[styles.row, {backgroundColor: 'purple'}]}/>
+            <View style={[styles.row, {backgroundColor: 'purple', flex: 2}]}/>
+            <View style={[styles.row, {backgroundColor: 'purple'}]}/>
+          </View>
+          <View style={[styles.row, {backgroundColor: 'orange'}]}>
+
+          </View>
+        </View>
       </View>
     );
   }
@@ -56,9 +84,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
+    alignItems: 'stretch',
+    flexDirection: 'column',
+    backgroundColor: '#00797d',
     padding: 10
+  },
+  row: {
+    margin: 5,
+    flex: 1,
+    alignItems: 'center'
+  },
+  pad: {
+    width: '100%',
+    height: '50%',
+    marginLeft: 10,
+    marginRight: 10
+  },
+  imgWrapper: {
+    justifyContent: 'center'
   }
 });
 
