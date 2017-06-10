@@ -19,6 +19,11 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
+    <!-- From: file:/home/lgm6/Programmation/Soundboard/android/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="backgroundColor">#00797d</color>
+    <!-- From: file:/home/lgm6/Programmation/Soundboard/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -225,7 +230,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <!-- From: file:/home/lgm6/Programmation/Soundboard/android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="app_name">app</string>
+    <string name="app_name">A l\'art H</string>
     <!-- From: file:/home/lgm6/Programmation/Soundboard/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.42.3/res/values/values.xml -->
     <eat-comment/>
     <string name="catalyst_copy_button" project="catalyst" translatable="false">Copy</string>
@@ -1349,6 +1354,11 @@
     </style>
     <style name="SpinnerDatePickerStyle" ns1:targetApi="lollipop" parent="android:Widget.Material.Light.DatePicker">
         <item name="android:datePickerMode">spinner</item>
+    </style>
+    <!-- From: file:/home/lgm6/Programmation/Soundboard/android/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
     </style>
     <!-- From: file:/home/lgm6/Programmation/Soundboard/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>

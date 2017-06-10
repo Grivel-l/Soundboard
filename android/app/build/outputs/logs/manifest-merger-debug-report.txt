@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-31:12
+ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-34:12
 	package
 		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:2:5-22
 		INJECTED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml
@@ -91,7 +91,7 @@ MERGED from [com.facebook.soloader:soloader:0.1.0] /home/lgm6/Programmation/Soun
 		INJECTED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml
 application
-ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:13:5-29:19
+ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:13:5-32:19
 MERGED from [com.facebook.react:react-native:0.42.3] /home/lgm6/Programmation/Soundboard/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.42.3/AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:appcompat-v7:23.0.1] /home/lgm6/Programmation/Soundboard/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.4.0] /home/lgm6/Programmation/Soundboard/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
@@ -127,30 +127,32 @@ MERGED from [org.webkit:android-jsc:r174650] /home/lgm6/Programmation/Soundboard
 	android:name
 		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:14:7-38
 activity#com.app.MainActivity
-ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:19:7-27:18
+ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:19:7-29:18
 	android:label
 		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:21:9-41
 	android:configChanges
 		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:22:9-79
+	android:theme
+		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:23:9-43
 	android:name
 		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:20:9-37
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:23:9-26:25
+ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:25:9-28:25
 action#android.intent.action.MAIN
-ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:24:13-65
+ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:26:13-65
 	android:name
-		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:24:21-62
+		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:26:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:25:13-73
+ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:27:13-73
 	android:name
-		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:25:23-70
+		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:27:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:28:7-84
+ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:31:7-84
 	android:name
-		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:28:17-81
+		ADDED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:31:17-81
 android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-31:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-34:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 android:uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-31:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-34:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-31:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /home/lgm6/Programmation/Soundboard/android/app/src/main/AndroidManifest.xml:1:1-34:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
