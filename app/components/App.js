@@ -5,6 +5,7 @@ import {
   Image,
   TouchableHighlight
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Sound from './Sound';
 
@@ -29,7 +30,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('Sound: ', this.state.sound);
     return (
       <View style={styles.container}>
         <Sound
@@ -67,12 +67,22 @@ class App extends Component {
         </View>
         <View style={[styles.row, {alignItems: 'stretch'}]}>
           <View style={[styles.row, {flexDirection: 'row', alignItems: 'stretch'}]}>
-            <View style={[styles.row, {backgroundColor: 'purple'}]}/>
-            <View style={[styles.row, {backgroundColor: 'purple', flex: 2}]}/>
-            <View style={[styles.row, {backgroundColor: 'purple'}]}/>
+            <View style={[styles.row, styles.controls]}>
+              <Icon name={'backward'} size={60} color={'white'} />
+            </View>
+            <View style={[styles.row, {flex: 2}]}>
+              <Image
+                source={require('../img/radio.png')}
+                resizeMode={'contain'}
+                style={styles.radio}
+              />
+            </View>
+            <View style={[styles.row, styles.controls]}>
+              <Icon name={'forward'} size={60} color={'white'} />
+            </View>
           </View>
-          <View style={[styles.row, {backgroundColor: 'orange'}]}>
-
+          <View style={styles.row}>
+            <Icon name={'stop'} color={'white'} size={60} />
           </View>
         </View>
       </View>
@@ -92,7 +102,8 @@ const styles = StyleSheet.create({
   row: {
     margin: 5,
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   pad: {
     width: '100%',
@@ -102,6 +113,13 @@ const styles = StyleSheet.create({
   },
   imgWrapper: {
     justifyContent: 'center'
+  },
+  radio: {
+    width: '100%'
+  },
+  controls: {
+    justifyContent: 'flex-end',
+    marginBottom: 20
   }
 });
 
