@@ -1,10 +1,23 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {
   View
 } from 'react-native';
 import RNSound from 'react-native-sound';
 
 class Sound extends Component {
+  static propTypes = {
+    sound: PropTypes.any,
+    playMusic: PropTypes.bool.isRequired,
+    stop: PropTypes.bool.isRequired,
+    nextMusic: PropTypes.bool.isRequired,
+    previousMusic: PropTypes.bool.isRequired,
+    previousMusicEnd: PropTypes.func.isRequired,
+    nextMusicEnd: PropTypes.func.isRequired,
+    soundEnd: PropTypes.func.isRequired,
+    musicEnd: PropTypes.func.isRequired,
+    stopEnd: PropTypes.func.isRequired
+  }
+
   constructor(props) {
     super(props);
 
