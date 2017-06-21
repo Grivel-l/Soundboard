@@ -2012,22 +2012,17 @@ containing a value of this type.
         public static final int screen=0x7f030001;
     }
     public static final class raw {
-        public static final int sound1=0x7f070000;
-        public static final int sound10=0x7f070001;
-        public static final int sound11=0x7f070002;
-        public static final int sound12=0x7f070003;
-        public static final int sound13=0x7f070004;
-        public static final int sound14=0x7f070005;
-        public static final int sound15=0x7f070006;
-        public static final int sound16=0x7f070007;
-        public static final int sound2=0x7f070008;
-        public static final int sound3=0x7f070009;
-        public static final int sound4=0x7f07000a;
-        public static final int sound5=0x7f07000b;
-        public static final int sound6=0x7f07000c;
-        public static final int sound7=0x7f07000d;
-        public static final int sound8=0x7f07000e;
-        public static final int sound9=0x7f07000f;
+        public static final int music1=0x7f070000;
+        public static final int music2=0x7f070001;
+        public static final int music3=0x7f070002;
+        public static final int music4=0x7f070003;
+        public static final int music5=0x7f070004;
+        public static final int music6=0x7f070005;
+        public static final int music7=0x7f070006;
+        public static final int music8=0x7f070007;
+        public static final int music9=0x7f070008;
+        public static final int sound1=0x7f070009;
+        public static final int sound2=0x7f07000a;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f080000;
